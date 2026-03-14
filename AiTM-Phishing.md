@@ -50,7 +50,65 @@ Este diagrama representa a movimentação de dados em tempo real. O Atacante (vo
 
 > Atencao! Aqui voce tem que ir para [DigitalOcean](https://github.com/miguellofredo85/Red-Team-TTP/blob/main/DigitalOcean.md) e configurar o ambiente cloud
 
+### **O que é um Phishlet?**
 
+Um **phishlet** é uma configuração baseada em YAML que indica ao Evilginx2 como:
+
+- Atuar como proxy de um site alvo
+- Capturar credenciais de login
+- Roubar cookies de sessão e tokens de autenticação
+- Redirecionar o tráfego para um serviço legítimo de forma invisível
+
+Os phishlets formam a base de todos os cenários de phishing do Evilginx2. Cada um é adaptado a um aplicativo específico (por exemplo, Google, WordPress, Amazon) e inclui lógica para gerenciamento de domínios, sequestro de sessão e coleta de credenciais.
+
+---
+
+### **Por que isso é importante**
+
+Os phishlets permitem que invasores (ou membros de equipes de teste de segurança, em um contexto legal) **contornem a autenticação de dois fatores (2FA)** roubando o cookie de sessão após a vítima fazer login com sucesso no serviço real — sem perceber que algo malicioso está ocorrendo. Esse é um diferencial fundamental entre o Evilginx e ferramentas de phishing mais simples.
+
+---
+
+### **Passo a passo: baixe e analise o Phishlet do WordPress.org**
+
+### **1. Obtenha o Phishlet do WordPress.org**
+
+Acesse este link:
+
+> https://github.com/An0nUD4Y/Evilginx2-Phishlets/blob/master/wordpress.org.yaml
+> 
+
+Clique em **“Raw”** e, em seguida, copie todo o conteúdo YAML.
+
+---
+
+
+### **2. Salvar o Phishlet localmente**
+
+No terminal do Kali Linux:
+
+mkdir -p ~/hands-on-phishing/phishlets cd ~/hands-on-phishing/phishlets nano wordpress.org.yaml
+
+Cole o conteúdo com `Ctrl + Shift + V` e, em seguida:
+
+- Salve e saia com: `Ctrl + X`, depois `Y` e, por fim, `Enter`
+
+---
+
+### **3. (Opcional) Abra na GUI para facilitar a revisão**
+
+mousepad wordpress.org.yaml
+
+Use qualquer editor GUI de sua preferência (`gedit`, `VS Code`, etc.).
+
+---
+
+### **Análise da estrutura do phishlet**
+
+Veja o que procurar no arquivo `wordpress.org.yaml`:
+
+> Este phishlet tem como alvo o domínio oficial wordpress.org. Ele não funcionará imediatamente em sites WordPress auto-hospedados, como hacksmarter-manufacturing.shop. É necessária personalização.
+>
 
 
 
