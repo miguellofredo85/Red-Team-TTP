@@ -1,5 +1,8 @@
 # **Compra de um domínio com o Namecheap**
 
+> Atencao!! NameCheap e o exemplo aqui, mas nao e um bom OPSEC, como tampouco sao GoDaddy, Google Domains, Porkbun.
+> Recomendados sao: bitdomain.biz, rgxa.io, domains4bitcoins.com, offshoredomains.org, royalhost.net
+
 ### **Visão geral**
 
 Com um domínio de phishing selecionado, esta lição orienta o aluno pelo processo de compra de um domínio por meio de um registrador — neste caso, o **Namecheap**. O registro de um domínio realista e de baixo custo é fundamental para a implantação de páginas de destino de phishing e a configuração de serviços como e-mail (via G Suite), SSL e DNS em etapas posteriores do projeto.
