@@ -33,16 +33,16 @@ Este diagrama representa a movimentação de dados em tempo real. O Atacante (vo
 ## Instalacoes
 
 ### goPhish
-. git clone https://github.com/gophish/gophish.git
-. cd gophish
-. go build
-. sudo ./gophish 
+- git clone https://github.com/gophish/gophish.git
+- cd gophish
+- go build
+- sudo ./gophish 
 
 ### Evilginx3
-. git clone https://github.com/kgretzky/evilginx2.git
-. cd evilginx2
-. make
-. sudo ./build/evilginx -p ./phishlets -developer
+- git clone https://github.com/kgretzky/evilginx2.git
+- cd evilginx2
+- make
+- sudo ./build/evilginx -p ./phishlets -developer
 
 
 
