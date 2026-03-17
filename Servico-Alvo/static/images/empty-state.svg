@@ -1,8 +1,0 @@
-<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="100" cy="100" r="80" stroke="#E2E8F0" stroke-width="4" stroke-dasharray="8 8"/>
-    <circle cx="100" cy="80" r="25" stroke="#6366F1" stroke-width="3" fill="white"/>
-    <path d="M60 140C60 120 80 105 100 105C120 105 140 120 140 140H60Z" stroke="#6366F1" stroke-width="3" fill="white"/>
-    <path d="M85 75L95 85M115 75L105 85" stroke="#6366F1" stroke-width="3" stroke-linecap="round"/>
-    <circle cx="100" cy="130" r="3" fill="#6366F1" fill-opacity="0.5"/>
-    <text x="100" y="170" text-anchor="middle" fill="#94A3B8" font-family="Inter, sans-serif" font-size="14">Nenhum dado</text>
-</svg>
