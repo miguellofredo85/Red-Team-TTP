@@ -53,9 +53,9 @@ Este diagrama representa a movimentação de dados em tempo real. O Atacante (vo
 - lures get-url 0
 
 ### Evilgophish
-git clone https://github.com/fin3ss3g0d/evilgophish.git
-cd evilgophish
-sudo ./setup.sh lab.example.com https://legitimate-site.com true YOURID true
+- git clone https://github.com/fin3ss3g0d/evilgophish.git
+- cd evilgophish
+- sudo ./setup.sh lab.example.com https://legitimate-site.com true YOURID true
 
 
 ### **O que é um Phishlet?**
